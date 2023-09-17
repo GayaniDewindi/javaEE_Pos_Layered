@@ -23,7 +23,7 @@ public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public boolean update(Customer to) throws SQLException, ClassNotFoundException {
         return CrudUtil.setQuery(
-                "update Customer set customerName=?,address=?,salary=? where customerId=?",
+                "update Customer set name=?,address=?,salary=? where id=?",
                 to.getName(),
                 to.getAddress(),
                 to.getSalary(),
@@ -33,7 +33,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean delete(Customer to) throws SQLException, ClassNotFoundException {
-        return CrudUtil.setQuery("delete from Customer where customerId=?", to.getId());
+        return CrudUtil.setQuery("delete from Customer where id=?", to.getId());
     }
 
     @Override
