@@ -101,7 +101,7 @@ function saveCustomer() {
 function getAllCustomers() {
     //clear all tbody data before add
     $("#tblCustomer").empty();
-
+console.log("ok");
     $.ajax({
         url: BASE_URL + 'customer',
         dataType: "json",
@@ -161,7 +161,7 @@ function searchCustomer(id) {
             resp = customers.find(function (customer) {
                 //if the search id match with customer record
                 //then return that object
-                return customer.id == id;
+                return customer.id === id;
             });
 
         },
@@ -174,7 +174,7 @@ function searchCustomer(id) {
 }
 
 function updateCustomer(id) {
-    if (searchCustomer(id) == undefined) {
+    if (searchCustomer(id) === undefined) {
         alert("No such Customer..please check the ID");
     } else {
         let consent = confirm("Do you really want to update this customer.?");
