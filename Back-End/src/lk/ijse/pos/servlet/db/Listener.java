@@ -14,7 +14,7 @@ public class Listener implements ServletContextListener {
         ServletContext servletContext = servletContextEvent.getServletContext();
         BasicDataSource pool = new BasicDataSource();
         pool.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        pool.setUrl("jdbc:mysql://localhost:3306/company");
+        pool.setUrl("jdbc:mysql://localhost:3306/pos");
         pool.setUsername("root");
         pool.setPassword("1234");
         pool.setInitialSize(10);
